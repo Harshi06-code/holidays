@@ -96,6 +96,24 @@ us_pr_holidays = holidays.country_holidays('US', subdiv='PR')
 
 Please see the [holidays documentation](https://holidays.readthedocs.io/) for additional examples
 and detailed information.
+### Query holidays within a date range
+
+You can retrieve holidays between two dates using a helper function:
+
+```python
+from datetime import date
+import holidays
+from holidays.utils import get_holidays_in_range
+
+us = holidays.US()
+
+result = get_holidays_in_range(
+    us,
+    date(2024, 1, 1),
+    date(2024, 12, 31)
+)
+
+print(result)
 
 ## Available Countries
 
